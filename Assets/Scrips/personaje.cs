@@ -69,16 +69,17 @@ public class personaje : MonoBehaviour
                     break;
                     //left
                     case 2: 
-                        
+                        speed = 150;
                         dirX -= 0.03f;
                         dirY = 0;
+                        
                         input.x = dirX;
                         input.y = dirY;
                         
                     break;
                     //right
                     case 3: 
-                        
+                        speed = 150;
                         dirX += 0.03f;
                         dirY = 0;
                         input.x = dirX;
@@ -88,7 +89,7 @@ public class personaje : MonoBehaviour
 
                     default:
                     
-                    
+                    speed = 250;
                     dirX = Input.GetAxis("Horizontal");
                     dirY = 0;
                     input.x = dirX;
@@ -136,6 +137,11 @@ public class personaje : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.tag == "piso")
+        {
+            tocandoSuelo = true;
+        }
+
+        if (other.gameObject.tag == "supBall")
         {
             tocandoSuelo = true;
         }

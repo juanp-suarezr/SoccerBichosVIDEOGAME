@@ -10,6 +10,7 @@ TagManager:
   - ball
   - alien
   - borderUp
+  - supBall
   layers:
   - Default
   - TransparentFX
