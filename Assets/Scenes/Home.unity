@@ -1682,9 +1682,10 @@ MonoBehaviour:
   dialoguePanel: {fileID: 226204337}
   dialogueText: {fileID: 93292443}
   dialogueLines:
-  - Hola BichoPlayers, ayudame a vencer a los aliens para ganar la champions. SIUUUUUU
+  - "Hola BichoPlayers, ayudame a vencer a los aliens para ganar la champions.\nTen
+    cuidado con el cielo del lugar. \nVAMOS A DARLE SIUUUUUU"
   Dialogueistrue: 0
-  cronometro: 5
+  cronometro: 8
 --- !u!1 &1686678276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,9 +1898,13 @@ MonoBehaviour:
   portada: {fileID: 0}
   GameWin: {fileID: 0}
   GameOver: {fileID: 0}
+  GameDraw: {fileID: 0}
   timerScript: {fileID: 0}
   ismobile: 1
   personaje: {fileID: 0}
+  audio: {fileID: 0}
+  soundWin: {fileID: 0}
+  soundLose: {fileID: 0}
 --- !u!4 &1957411689
 Transform:
   m_ObjectHideFlags: 0
