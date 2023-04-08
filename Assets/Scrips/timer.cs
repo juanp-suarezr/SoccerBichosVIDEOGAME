@@ -13,11 +13,13 @@ public class timer : MonoBehaviour
 
     public bool isTimeOver = false;
 
+    public bool isActivePower = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isActivePower = false;
         textMesh = GetComponent<TextMeshProUGUI>();
     }
 
@@ -25,6 +27,11 @@ public class timer : MonoBehaviour
     void Update()
     {
         
+        if (time < 30)
+        {
+            isActivePower = true;
+        }
+
         if (time <= 0)
         {
             if (time < 0) 

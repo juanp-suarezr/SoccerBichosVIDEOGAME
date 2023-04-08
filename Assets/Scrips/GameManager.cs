@@ -106,6 +106,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
         if (SceneManager.GetActiveScene().name == "Game")
         {
             if (timerScript.isTimeOver) 
@@ -193,6 +196,12 @@ public class GameManager : MonoBehaviour
     public void Right() {
         
         personaje.num = 3;
+        
+    }
+
+    public void power() {
+        
+        personaje.num = 4;
         
     }
 

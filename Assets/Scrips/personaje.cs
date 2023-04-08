@@ -11,6 +11,8 @@ public class personaje : MonoBehaviour
     public float fuerzaUp;
 
     private bool tocandoSuelo;
+
+    private bool tocandoBalon;
     Vector2 input;
     
     //touch
@@ -35,12 +37,22 @@ public class personaje : MonoBehaviour
     public GameManager GameManager;
 
     public int num;
+
+    //efecto potencia
+    public GameObject ball;
+    public balon balon;
+
+    public GameObject btn_power;
+
+    public timer timer;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
         animator = GetComponent<Animator>();
+        btn_power.SetActive(false);
     }
 
 
@@ -86,6 +98,16 @@ public class personaje : MonoBehaviour
                         input.y = dirY;
                         
                     break;
+                    case 4:
+                        animator.SetBool("moving", false);
+                        animator.SetBool("up", true);
+                        tocandoSuelo = false;
+                        Time.timeScale = 0f;
+                        transform.position = new Vector3(transform.position.x, 1, 0);
+                        ball.transform.position = new Vector3(transform.position.x, 1, 0);
+                        Time.timeScale = 1f;
+                        balon.rb.velocity = new Vector2(15, -1);
+                    break;
 
                     default:
                     
@@ -114,6 +136,11 @@ public class personaje : MonoBehaviour
                     
 
                 }
+
+                if (timer.isActivePower)
+                {
+                    btn_power.SetActive(true);
+                }
     }
 
     private void FixedUpdate() {
@@ -132,6 +159,19 @@ public class personaje : MonoBehaviour
                         tocandoSuelo = false;
                     }
             
+            if (Input.GetKeyDown(KeyCode.S) && tocandoBalon && timer.isActivePower)
+                    {
+                        animator.SetBool("moving", false);
+                        animator.SetBool("up", true);
+                        tocandoSuelo = false;
+                        Time.timeScale = 0f;
+                        transform.position = new Vector3(transform.position.x, 1, 0);
+                        ball.transform.position = new Vector3(transform.position.x, 1, 0);
+                        Time.timeScale = 1f;
+                        balon.rb.velocity = new Vector2(15, -1);
+                        
+                    }
+            
     }
 
     public void OnCollisionEnter2D(Collision2D other) 
@@ -145,7 +185,14 @@ public class personaje : MonoBehaviour
         {
             tocandoSuelo = true;
         }
+
+        if (other.gameObject.tag == "ball")
+        {
+            tocandoBalon = true;
+        }
     }
+
+    
 
     
 
