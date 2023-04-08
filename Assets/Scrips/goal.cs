@@ -30,6 +30,8 @@ public class goal : MonoBehaviour
         {
             if (playerGoal)
             {
+                Debug.Log("coll with arqueria");
+                ai.tocoMitad = false;
                 alien.transform.position += new Vector3(-ai.speed*Time.deltaTime, 0, 0);
             }
             

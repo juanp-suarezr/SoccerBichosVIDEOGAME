@@ -5,7 +5,7 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
 
-    public float speed = 4.6f;
+    public float speed = 5;
 
     public GameObject ball;
 

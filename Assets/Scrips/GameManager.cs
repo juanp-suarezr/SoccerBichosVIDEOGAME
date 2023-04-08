@@ -74,7 +74,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            Time.timeScale = 0f;
+        } else {
+            Time.timeScale = 1f;
+        }
+        
+        portada.SetActive(true);
         character.transform.position = new Vector3(-5, -2, 0);
         NPC.transform.position = new Vector3(5, -2, 0);
         
@@ -95,7 +102,17 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0f;
 
-                GameOver.SetActive(true);
+                if (playerScore > NpcScore)
+                {
+                    GameOver.SetActive(false);
+                    GameWin.SetActive(true);
+                } else if (playerScore < NpcScore)
+                {
+                    GameOver.SetActive(true);
+                    GameWin.SetActive(false);
+                }
+
+                
             } else
             {
                 

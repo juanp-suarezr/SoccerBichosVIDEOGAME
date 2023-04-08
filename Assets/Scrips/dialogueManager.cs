@@ -18,7 +18,7 @@ public class dialogueManager : MonoBehaviour
     public bool Dialogueistrue;
     private int lineIndex;
     
-    public float cronometro = 5;
+    public float cronometro = 4.5f;
         
 
     private void StartDialogue()
@@ -31,7 +31,7 @@ public class dialogueManager : MonoBehaviour
 
     public void NextDialogueLine() {
         lineIndex++;
-        cronometro = 6;
+        
         Debug.Log(lineIndex);
         if (lineIndex < dialogueLines.Length)
         {

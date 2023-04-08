@@ -49,6 +49,7 @@ public class menuManager : MonoBehaviour
                             MenuHome.SetActive(true);
                             playStart.SetActive(false);
                         break;
+                        //cambion de avatars
                         case 1: 
                             MenuHome.SetActive(false);
                             SceneManager.LoadScene(GameManager.num_scene);
@@ -89,6 +90,7 @@ public class menuManager : MonoBehaviour
             isMenuPause = true;
             GameManager.GameWin.SetActive(false);
             GameManager.GameOver.SetActive(false);
+            GameManager.portada.SetActive(false);
             pauseMenu.SetActive(true);
             
             UpdateGameState();

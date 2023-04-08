@@ -10,7 +10,7 @@ public class collider_mitad : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         
-        if (other.CompareTag("alien") && ball.transform.position.x < transform.position.x)
+        if (other.CompareTag("alien"))
         {
             ai.tocoMitad = true;
             
@@ -19,4 +19,7 @@ public class collider_mitad : MonoBehaviour
             ai.tocoMitad = false;
         }
     }
+
+    
+    
 }

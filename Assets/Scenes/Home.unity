@@ -647,7 +647,6 @@ GameObject:
   - component: {fileID: 296958445}
   - component: {fileID: 296958444}
   - component: {fileID: 296958443}
-  - component: {fileID: 296958442}
   m_Layer: 0
   m_Name: SoundController
   m_TagString: Untagged
@@ -655,18 +654,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &296958442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296958441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36e39384afba71442b5c3aa127448f66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &296958443
 AudioSource:
   m_ObjectHideFlags: 0
@@ -840,7 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1527547258}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &442128678
@@ -1900,14 +1887,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 0}
+  ball: {fileID: 0}
+  NPC: {fileID: 0}
+  playerGoal: {fileID: 0}
+  NpcGoal: {fileID: 0}
+  playerText: {fileID: 0}
+  NpcText: {fileID: 0}
   num_scene: 0
   portada: {fileID: 0}
   GameWin: {fileID: 0}
   GameOver: {fileID: 0}
   timerScript: {fileID: 0}
-  createTime: 0
-  createRange: 12
   ismobile: 1
+  personaje: {fileID: 0}
 --- !u!4 &1957411689
 Transform:
   m_ObjectHideFlags: 0
