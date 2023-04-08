@@ -5,8 +5,11 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     private AudioSource soundSiu;
-    public static SoundController Instance;
     
+    public static SoundController Instance;
+
+    
+
     private void Start() {
         Instance = this;
         soundSiu = GetComponent<AudioSource>();
@@ -16,5 +19,9 @@ public class SoundController : MonoBehaviour
         soundSiu.PlayOneShot(sonido);
 
     }
+
+
+    
+
     
 }

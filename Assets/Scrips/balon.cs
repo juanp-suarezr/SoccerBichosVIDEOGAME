@@ -19,8 +19,8 @@ public class balon : MonoBehaviour
     public void Reset() {
         transform.position = startPos;
         rb.velocity = Vector2.zero;
-
         Launch();
+        
         
 
         
@@ -30,7 +30,7 @@ public class balon : MonoBehaviour
     {
         //lanzar bola para un lado u otro --- lo de la derecha es un if resumido.
         //if Random.range = 0 -> -1 else 1
-        float x = Random.Range(0,2) == 0 ? -1 : 1;
+        float x = Random.Range(0,2) == 0 ? -3 : 3;
         
 
         rb.velocity = new Vector2(speed*x, 0);

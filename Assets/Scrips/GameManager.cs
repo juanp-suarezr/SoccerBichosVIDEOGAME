@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public GameObject GameWin;
     public GameObject GameOver;
 
+    public GameObject GameDraw;
+
     //instancia objeto tipo timer
     public timer timerScript;
     
@@ -44,6 +46,14 @@ public class GameManager : MonoBehaviour
     public bool ismobile = true;
 
     public personaje personaje;
+
+    //sound Game Win GameOver
+    [SerializeField] private SoundController audio;
+
+    [SerializeField] private AudioClip soundWin;
+    [SerializeField] private AudioClip soundLose;
+
+    private int num_Rep;
 
 
     public void PlayerScored()
@@ -63,14 +73,13 @@ public class GameManager : MonoBehaviour
     public void ResetPosition()
     {
         
-        
         ball.GetComponent<balon>().Reset();
         character.transform.position = new Vector3(-5, -2, 0);
         NPC.transform.position = new Vector3(5, -2, 0);
 
-        
-        
     }
+
+    
 
     void Start()
     {
@@ -81,6 +90,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
         
+        num_Rep = 0;
         portada.SetActive(true);
         character.transform.position = new Vector3(-5, -2, 0);
         NPC.transform.position = new Vector3(5, -2, 0);
@@ -104,11 +114,35 @@ public class GameManager : MonoBehaviour
 
                 if (playerScore > NpcScore)
                 {
+                    if (num_Rep == 0)
+                    {
+                        audio.EjecutarSonido(soundWin);
+                        num_Rep ++;
+                    }
+                    
                     GameOver.SetActive(false);
                     GameWin.SetActive(true);
+                    GameDraw.SetActive(false);
                 } else if (playerScore < NpcScore)
                 {
+                    if (num_Rep == 0)
+                    {
+                        audio.EjecutarSonido(soundLose);
+                        num_Rep ++;
+                    }
+                    
                     GameOver.SetActive(true);
+                    GameWin.SetActive(false);
+                    GameDraw.SetActive(false);
+                } else {
+                    if (num_Rep == 0)
+                    {
+                        audio.EjecutarSonido(soundLose);
+                        num_Rep ++;
+                    }
+                    
+                    GameDraw.SetActive(true);
+                    GameOver.SetActive(false);
                     GameWin.SetActive(false);
                 }
 
@@ -125,6 +159,8 @@ public class GameManager : MonoBehaviour
         
         
     }
+
+
 
     
 
