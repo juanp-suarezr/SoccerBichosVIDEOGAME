@@ -5956,6 +5956,7 @@ GameObject:
   - component: {fileID: 1464162534}
   - component: {fileID: 1464162536}
   - component: {fileID: 1464162535}
+  - component: {fileID: 1464162537}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -6056,6 +6057,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1464162537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464162533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5815b0fab14b54e9ba30b5a17b28ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balon: {fileID: 1144302977}
 --- !u!1 &1522988857
 GameObject:
   m_ObjectHideFlags: 0
@@ -7728,7 +7742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1909202822
 Transform:
   m_ObjectHideFlags: 0
